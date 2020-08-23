@@ -1,0 +1,46 @@
+using System;
+
+class HelloWorld {
+  static void Main() {
+    while(true)
+        {
+            Console.WriteLine("Are you ready for the next number?? Y Or N");
+            char areReady;
+            if(char.TryParse(Console.ReadLine(),out areReady))
+            {
+                if(areReady=='Y'||areReady=='y')
+                {
+                    Console.WriteLine("Please enter the next number");
+                    int input;
+                    if(int.TryParse(Console.ReadLine(),out input))
+                    {
+                        Console.WriteLine("InPut is : {0}",input);
+                        int output=0;
+                        while(input>0)
+                        {
+                            input=input&input-1;
+                            output++;
+                        }
+                        Console.WriteLine("OutPut is : {0}",output);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter a valid number");
+                    }
+                }
+                else if(areReady=='N'||areReady=='n')
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice.... Please select Y Or N");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter valid input");
+            }
+        }
+  }
+}
