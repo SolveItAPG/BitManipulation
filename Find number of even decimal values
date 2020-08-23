@@ -1,0 +1,25 @@
+using System;
+class HelloWorld
+{
+  static void Main ()
+  {
+      Console.WriteLine("enter number of test cases");
+      int testCases = int.Parse(Console.ReadLine());
+      int CountOfOnes;
+      while (testCases > 0)
+      {
+          CountOfOnes=0;
+          Console.WriteLine("enter the length of binary string");
+          int length = int.Parse(Console.ReadLine());
+          Console.WriteLine("enter the string of binary");
+          int str = Convert.ToInt32(Console.ReadLine(),2);
+          while(str>0)
+          {
+              str=str&(str-1);
+              CountOfOnes++;
+          }
+          Console.WriteLine("Number of Even Decimal values formed are {0}",length-CountOfOnes);
+          testCases--;
+      }
+  }
+}
